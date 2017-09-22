@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	
+<h:head>
+<meta charset="utf-8" />
+<title>DataTable com formulário</title>
+</h:head>
+
+<body>
+	<h:form>
+	
+		<h:panelGrid columns="2">
+		
+			<h:outputLabel value="Título"/>
+			<h:inputText value="#{livroBean2.novoLivro.titulo}"/>
+			
+			<h:outputLabel value="Autor"/>
+			<h:inputText value="#{livroBean2.novoLivro.autor}"/>
+			
+			<h:outputLabel/>
+			<h:commandButton value="Adicionar" action="#{livroBean2.adicionar}"/>
+		</h:panelGrid>
+		<h:dataTable value="#{livroBean2.livros}" var="livro" border="1"
+					cellspacing="0" cellpadding="2">
+			
+			<f:facet name="header">Relação de livros favoritos</f:facet>
+			
+			<h:column>
+				<f:facet name="header">Título</f:facet>
+				<h:outputText value="#{livro.titulo}"></h:outputText>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Autor</f:facet>
+				<h:outputText value="#{livro.autor}"/>
+			</h:column>
+			
+		</h:dataTable>
+	</h:form>
+
+</body>
+</html>
