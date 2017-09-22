@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<title>Lista de Nomes</title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+		integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+		crossorigin="anonymous" />
+</h:head>
+
+<h:body>
+
+	<div style="padding: 20px">
+		<h:form>		
+		Nome: <h:inputText binding="#{nomesBean.inputNome}"
+				class="form-control col-lg-4" value="#{nomesBean.nome}" />
+			<br />
+			<h:commandButton binding="#{nomesBean.botaoAdicionar}"
+				class="btn btn-primary col-lg-2" value="Adicionar"
+				action="#{nomesBean.adicionar}" />
+		</h:form>
+
+
+		<div style="box-shadow: 0px 0px 4px rgba(0, 0, 0, .5); margin-top:  20px; margin-bottom: 20px; padding: 15px;">
+			
+			<h:outputLabel value="Nomes" />
+			<hr />
+			<ol>
+				<ui:repeat var="nome" value="#{nomesBean.nomes}">
+					<li>#{nome}</li>
+				</ui:repeat>
+			</ol>
+
+		</div>
+
+		<h:form>
+			<h:commandButton class="btn btn-primary col-lg-2" value="Próxima Página" action="oi" />
+		</h:form>
+	</div>
+
+</h:body>
+
+</html>
+

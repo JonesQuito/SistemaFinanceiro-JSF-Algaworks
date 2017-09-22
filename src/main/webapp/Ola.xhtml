@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html 	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<title>Olá JSF</title>
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+		integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
+		crossorigin="anonymous" />
+</h:head>
+
+<h:body>
+	<div class="col-lg-6" style="margin: auto; box-shadow: 0px 0px 5px rgba(0, 0, 0, .5); padding: 10px; margin-top: 10px;">
+		<h:form>
+
+			<div class="col-lg-12">
+			
+				<h1>Olá #{ola.nomeCompleto}</h1>
+
+				Nome: <h:inputText value="#{ola.nome}" class="form-control" />
+				Sobrenome: <h:inputText value="#{ola.sobrenome}" class="form-control" />
+
+				<h:commandButton class = "btn btn-primary form-control" value="Dizer Olá" action="#{ola.dizerOla}"/>
+				
+			</div>
+			
+		</h:form>
+	</div>
+</h:body>
+</html>

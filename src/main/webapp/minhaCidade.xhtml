@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>Minha Cidade</title>
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+
+<h:body>
+	<div class="wrapper">
+		<h:form>
+			<h:outputLabel value="Escolha sua Cidade" />
+			<h:selectOneMenu value="#{minhaCidadeBean.cidadeNatal}">
+				<f:selectItems value="#{minhaCidadeBean.todasCidades}" />
+			</h:selectOneMenu>
+		</h:form>
+	</div>
+</h:body>
+</html>

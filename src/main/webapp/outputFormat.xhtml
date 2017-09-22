@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+	<title>OutputFormat</title>
+</h:head>
+
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Nome" />
+			<h:inputText value="#{alunoBean.nomeUsuario}" 
+			onkeyup="this.value = this.value.toUpperCase()"
+			onclick="this.value = ''"/>
+			
+			<h:outputLabel value="Curso" />
+			<h:inputText value="#{alunoBean.curso}" 
+			onkeyup="this.value = this.value.toUpperCase()"
+			onclick="this.value = ''"/>
+			
+			<h:outputLabel value="Tarefas Pendentes" />
+			<h:inputText value="#{alunoBean.qtdeTarefasPendentes}" 
+			onkeyup="this.value = this.value.toUpperCase()"
+			onclick="this.value = ''"/>
+
+			<h:commandButton value="Atualizar" />
+		</h:panelGrid>
+		
+		<h:panelGrid columns="1">
+			<h:outputFormat value="Nome: {0}.">
+				<f:param value="#{alunoBean.nomeUsuario}" />
+			</h:outputFormat>
+			
+			<h:outputFormat binding="#{alunoBean.outcurso}" value="Curso: {0}">
+				<f:param value="#{alunoBean.curso}"></f:param>
+			</h:outputFormat>
+			
+			<h:outputFormat value="Tarefas Pendentes: {0}">
+			<f:param value="#{alunoBean.qtdeTarefasPendentes}"/>
+			</h:outputFormat>
+		</h:panelGrid>
+	</h:form>
+</h:body>
+
+</html>

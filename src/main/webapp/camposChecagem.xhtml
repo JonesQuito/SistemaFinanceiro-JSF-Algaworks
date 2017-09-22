@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<title>Campos de Checkagem</title>
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+
+
+<h:body>
+
+	<div class="wrapper">
+		<div class="header">
+			<h1>Cadastro de Usuários</h1>
+		</div>
+
+		<h:form styleClass="formulario" id="form1">
+			<h3>
+				<h:outputLabel value="Dados Pessoais" />
+			</h3>
+
+			<h:panelGrid columns="2" styleClass="formulario">
+				<h:outputLabel value="Nome" />
+				<h:inputText value="#{cadastroUsuarioBean.nome}" size="50" id="nome"
+					onkeyup="this.value = this.value.toUpperCase()"
+					onmouseover="this.style.backgroundColor = 'rgba(0, 0, 0, .1)'"
+					onmouseout="this.style.backgroundColor = 'white'"
+					onclick="this.value = '';" />
+				<h:outputLabel value="Endereço" />
+				<h:inputText value="#{cadastroUsuarioBean.endereco}" size="50"
+					onkeyup="this.value = this.value.toUpperCase()"
+					onmouseover="this.style.backgroundColor = 'rgba(0, 0, 0, .1)'"
+					onmouseout="this.style.backgroundColor = 'white'"
+					onclick="this.value = '';" />
+				<h:outputLabel value="E-mail" />
+				<h:inputText value="#{cadastroUsuarioBean.email}" size="50"
+					onkeyup="this.value = this.value.toLowerCase()"
+					onmouseover="this.style.backgroundColor = 'rgba(0, 0, 0, .1)'"
+					onmouseout="this.style.backgroundColor = 'white'"
+					onclick="this.value = ''" />
+
+				<h:outputLabel value="Sexo" />
+
+				<h:selectOneRadio id="sexo" layout="lineDirection"
+					value="#{cadastroUsuarioBean.sexo}">
+					<f:selectItem itemValue="M" itemLabel="Masculino" />
+					<f:selectItem itemValue="F" itemLabel="Feminino" />
+				</h:selectOneRadio>
+			</h:panelGrid>
+
+			<h3>
+				<h:outputLabel value="Interesses" />
+			</h3>
+			<h:panelGrid columns="1" styleClass="bordas, formulario">
+				<h:selectManyCheckbox id="interesse" layout="pageDirection"
+					value="#{cadastroUsuarioBean.assuntosInteresse}">
+					<f:selectItem itemValue="Java" itemLabel="Java" />
+					<f:selectItem itemValue="Python" itemLabel="Python" />
+					<f:selectItem itemValue="Ruby" itemLabel="Ruby" />
+					<f:selectItem itemValue="PHP" itemLabel="PHP" />
+					<f:selectItem itemValue="Métodos Ágeis" itemLabel="Métodos Ágeis" />
+				</h:selectManyCheckbox>
+			</h:panelGrid>
+
+			<br />
+			<h:outputLabel value="Li e aceito os termos e condições" for="aceite" />
+			<h:selectBooleanCheckbox id="aceite"
+				value="#{cadastroUsuarioBean.termoAceite}" />
+			<br />
+
+			<h:commandButton id="cadastrar" value="Cadastrar" type="submit"
+				styleClass="button" action="#{cadastroUsuarioBean.exibeMensagem}" />
+
+			<h:commandButton id="limpar" value="Limpar" type="reset"
+				styleClass="button" />
+
+			<h:outputLink value="http://www.algaworks.com" target="_blank">
+				<h:graphicImage library="algaworks" name="logo.png" width="80" height="30" style="box-shadow: 0px 0px 3px black;"/>
+			</h:outputLink>
+			
+			<h:outputLink value="http://www.algaworks.com" target="_blank">
+				<f:param name="codigo" value="931"/>
+				<f:param name="grupo" value="Java"/>
+				<h:graphicImage library="algaworks" name="logo.png"/>
+			</h:outputLink>
+
+			<hr />
+
+			<h:outputFormat value="Mensagem: {0} ">
+				<f:param value="#{cadastroUsuarioBean.mensagem}" />
+			</h:outputFormat>
+			<br />
+
+			<h:outputFormat value="Nome: {0}">
+				<f:param value="#{cadastroUsuarioBean.nome}" />
+			</h:outputFormat>
+			<br />
+			<h:outputFormat value="Sexo: {0}">
+				<f:param value="#{cadastroUsuarioBean.sexo}" />
+			</h:outputFormat>
+			<br />
+			<h:outputFormat value="Endereço: {0}">
+				<f:param value="#{cadastroUsuarioBean.endereco}" />
+			</h:outputFormat>
+			<br />
+
+			<h:outputFormat value="Email: {0}">
+				<f:param value="#{cadastroUsuarioBean.email}" />
+			</h:outputFormat>
+			<br />
+
+			<h4>
+				<h:outputLabel value="Meus Interesses" />
+			</h4>
+			<ui:repeat var="curso"
+				value="#{cadastroUsuarioBean.assuntosInteresse}" varStatus="0">
+				<h:outputLabel value="- #{curso}" />
+				<br />
+			</ui:repeat>
+
+
+
+			<br />
+		</h:form>
+
+	</div>
+</h:body>
+
+</html>

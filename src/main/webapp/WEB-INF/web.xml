@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>Financeiro</display-name>
+  
+  <!-- DEFINE OS ARQUIVOS DE BOAS VINDAS DO PROJETO -->
+  <welcome-file-list>
+  	<welcome-file>index.html</welcome-file>
+  	<welcome-file>index.xhtml</welcome-file>
+  </welcome-file-list>
+  
+  <!-- REGISTRA UM SERVLET ATRIBUÍNDO-LHE UM NOME E DIZENDO A QUE CLASSE PERTENCE -->
+  <servlet>
+    <servlet-name>Faces Servlet</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <!-- MAPEIA A URL DE ACESSO PARA A SERVLET CRIADA ACIMA -->
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>*.xhtml</url-pattern>
+  </servlet-mapping>
+  
+ <!-- 	DEFINE O CONTEXTO DA APLICAÇÃO. NESTE CASO INDICAMOS QUE 
+ 		ESTAMOS NO ESTÁGIO DE DESENVOLVIMENTO, ISSO FAZ COM QUE
+ 		A PÁGINA EXIBA INFORMAÇÕES TÉCNICAS ADICIONAIS EM CASO DE ERRO
+  -->
+  <context-param>
+  	<param-name>javax.faces.PROJECT_STAGE</param-name>
+  	<param-value>Development</param-value>
+  </context-param>
+  
+</web-app>

@@ -1,0 +1,35 @@
+@CHARSET "ISO-8859-1";
+
+.wrapper {
+	width: 80%;
+	margin: auto;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+	padding: 3%;
+}
+
+.header {
+	padding: 0px;
+	margin-top: -40px;
+}
+
+.formulario {
+	width: 90%;
+	margin: auto;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, .1);
+	padding: 3%;
+}
+
+.bordas {
+	box-shadow: 0px 0px 8px rgba(0, 0, 0, .5);
+	padding: 5px;
+	margin-top: 10px;
+}
+
+.imagem {
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+	border-radius: 5px; 
+}
+
+.button{
+	margin: 4px;
+}

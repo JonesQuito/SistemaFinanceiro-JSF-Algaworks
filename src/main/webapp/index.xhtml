@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+	<title>Home Page</title>
+	<h:outputStylesheet library="css" name="style.css" />
+</h:head>
+
+<h:body>
+	<div class="wrapper">
+		<div class="cabecalho">
+			<h1>Página inicial</h1>
+			<hr/>
+		</div>
+
+		<div class="conteudo">
+			<h3>Links para as páginas do sistema</h3>
+			<h:form>
+				<h:panelGrid columns="1">
+					<h:commandLink value="Saída formatada - OutputFormat"
+						action="outputFormat" />
+					<h:commandLink value="Adicionando nomes" action="Nomes" />
+					<h:commandLink value="Imagens" action="imagens" />
+					<h:commandLink value="Menus de Listagem" action="menusListagem"/>
+				</h:panelGrid>
+			</h:form>
+		</div>
+		
+		<div class="rodape">
+			<hr/>
+			Texto de rodapé
+		</div>
+		
+
+	</div>
+</h:body>
+
+</html>
