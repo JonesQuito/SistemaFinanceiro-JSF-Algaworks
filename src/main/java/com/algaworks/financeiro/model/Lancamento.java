@@ -101,7 +101,7 @@ public class Lancamento implements Serializable {
 	
 	
 	@Temporal(TemporalType.DATE)
-	@Column(name = "data_pagamento", nullable = false)
+	@Column(name = "data_pagamento")
 	public Date getDataPagamento() {
 		return dataPagamento;
 	}
