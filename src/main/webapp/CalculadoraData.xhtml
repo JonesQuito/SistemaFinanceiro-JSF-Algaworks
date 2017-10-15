@@ -9,12 +9,14 @@
 		<h:form id="frm">
 			<h:messages showDetail="true" showSummary="false" />
 			
-			<h:inputText size="12" value="#{calculadoraDataBean.dataBase}" label="Data base" converter="smartDate"/>
+			<h:inputText size="12" value="#{calculadoraDataBean.dataBase}" converter="smartDate"> 
+				<f:validator validatorId="diaUtil"/>
+			</h:inputText>
 			+			
 			<h:inputText size="12" value="#{calculadoraDataBean.dias}" label="dias adicionais"/>
-			dias = 
+			<h:outputLabel rendered="#{calculadoraDataBean.resultado != null}" value="Data: "/>
 			
-			<h:outputText value="#{calculadoraDataBean.resultado}">
+			<h:outputText rendered="true" value="#{calculadoraDataBean.resultado}">
 				<f:convertDateTime dateStyle="full" locale="pt_BR"/>
 			</h:outputText>
 			<br/><br/>
