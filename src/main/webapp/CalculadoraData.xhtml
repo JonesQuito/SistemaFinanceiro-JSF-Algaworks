@@ -9,9 +9,7 @@
 		<h:form id="frm">
 			<h:messages showDetail="true" showSummary="false" />
 			
-			<h:inputText size="12" value="#{calculadoraDataBean.dataBase}" label="Data base" converterMessage="Informe uma data válida">
-				<f:convertDateTime pattern="dd/MM/yyyy"/>
-			</h:inputText>
+			<h:inputText size="12" value="#{calculadoraDataBean.dataBase}" label="Data base" converter="smartDate"/>
 			+			
 			<h:inputText size="12" value="#{calculadoraDataBean.dias}" label="dias adicionais"/>
 			dias = 
